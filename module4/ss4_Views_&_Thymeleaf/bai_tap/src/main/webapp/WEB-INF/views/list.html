@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<body>
+<h1>Product Management</h1>
+<p>
+    <a th:href="@{/product/create}">
+        Add new product
+    </a>
+</p>
+<form action="/product" class="d-flex" role="search">
+    <input name="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Product Describe</th>
+        <th>Producer</th>
+    </tr>
+    <tr th:each="row,rowStat : ${product}">
+        <td th:text="${row.getId()}"></td>
+        <td th:text="${row.getName()}"></td>
+        <td th:text="${row.getPrice()}"></td>
+        <td th:text="${row.getDescribe()}"></td>
+        <td th:text="${row.getProducer()}"></td>
+        <td><a th:href="@{/product/showEdit/{id}(id=${row.getId()})}">Edit</a></td>
+        <td><a th:href="@{/product/delete/{id}(id=${row.getId()})}">Delete</a></td>
+    </tr>
+</table>
+</body>
+</html>
