@@ -1,17 +1,12 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: Admin
-  Date: 28/2/2023
-  Time: 4:22 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Title</title>
 </head>
-
+<link href="<c:url value="/resources/css/bootstrap.css" />" rel="stylesheet">
 <body>
 <h1 class="mb-3">Setting</h1>
 <form:form modelAttribute="emailBox" action="/updateEmail" method="post">
@@ -39,5 +34,6 @@
                                                          href="/showEmail">Cancel</a></button>
     <button class="btn btn-primary my-3" type="submit">Update</button>
 </form:form>
+<script src="<c:url value="/resources/js/bootstrap.js" />"></script>
 </body>
 </html>
