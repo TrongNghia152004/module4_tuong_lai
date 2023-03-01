@@ -14,15 +14,15 @@
 </head>
 <body>
 <h1>Settings</h1>
-<div>Languages: ${mailBox.languages}</div>
+<div>Languages: ${emailBox.languages}</div>
 
-<div>Page size: Show ${mailBox.pageSize} emails per page</div>
+<div>Page size: Show ${emailBox.pageSize} emails per page</div>
 
 <div>Spam filter: ${spamFilter}</div>
 
-<div>Signature: ${mailBox.signature}</div>
+<div>Signature: ${emailBox.signature}</div>
 
-<button class="mt-3 btn btn-primary"><a class="text-white" href="/updateFormMail" style="text-decoration: none">Update</a>
+<button class="mt-3 btn btn-primary"><a class="text-white" href="/updateFormEmail" style="text-decoration: none">Update</a>
 </button>
 </body>
 </html>
