@@ -2,36 +2,41 @@ package com.example.service.impl;
 
 import com.example.model.Product;
 import com.example.repository.IProductRepository;
-import com.example.repository.impl.ProductRepository;
 import com.example.service.IProductService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProductService implements IProductService {
-    IProductRepository iProductRepository = new ProductRepository();
-
+    @Autowired
+    private IProductRepository productRepository;
     @Override
-    public List<Product> display(String search) {
-        return iProductRepository.display(search);
+    public List<Product> listProductByName(String name) {
+        if (name == null) {
+            name = "";
+        }
+        return productRepository.listProductByName(name);
     }
 
     @Override
     public void createProduct(Product product) {
-        iProductRepository.createProduct(product);
+        productRepository.createProduct(product);
     }
 
     @Override
     public Product findById(int id) {
-        return iProductRepository.findById(id);
+        return productRepository.findById(id);
     }
 
     @Override
     public void updateProduct(Product product) {
-        iProductRepository.updateProduct(product);
+        productRepository.updateProduct(product);
     }
 
     @Override
     public void deleteProduct(int id) {
-        iProductRepository.deleteProduct(id);
+        productRepository.deleteProduct(id);
     }
 }

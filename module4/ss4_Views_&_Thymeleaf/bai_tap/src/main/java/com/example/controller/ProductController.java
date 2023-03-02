@@ -5,12 +5,7 @@ import com.example.service.IProductService;
 import com.example.service.impl.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/product")
@@ -18,9 +13,8 @@ public class ProductController {
     IProductService iProductService = new ProductService();
 
     @GetMapping("")
-    public String list(String search, Model model) {
-        List<Product> productList = iProductService.display(search);
-        model.addAttribute("product", productList);
+    public String list(@RequestParam(required = false) String name, Model model) {
+        model.addAttribute("product", iProductService.listProductByName(name));
         return "/list";
     }
 
@@ -31,8 +25,7 @@ public class ProductController {
     }
 
     @PostMapping("/save")
-    public String save(Product product) {
-        product.setId(iProductService.display(null).size() + 1);
+    public String save(@ModelAttribute Product product) {
         iProductService.createProduct(product);
         return "redirect:/product";
     }
