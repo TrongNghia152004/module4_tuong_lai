@@ -5,9 +5,10 @@ import com.example.repository.IBlogRepository;
 import com.example.repository.ICategoryRepository;
 import com.example.service.IBlogService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 @Service
 public class BlogService implements IBlogService {
@@ -17,8 +18,8 @@ public class BlogService implements IBlogService {
     private ICategoryRepository categoryRepository;
 
     @Override
-    public List<Blog> findAll(String name) {
-        return blogRepository.findByAuthorNameContaining(name);
+    public Page<Blog> findAll(String name, Pageable pageable) {
+        return blogRepository.findByAuthorNameContaining(name , pageable);
     }
 
     @Override

@@ -33,7 +33,17 @@
   <tr th:each="category, iterStat : ${categoryList}">
     <td th:text="${iterStat.count}"></td>
     <td><a th:href="@{/category/detail?id=__*{category.id}__}" th:text="${category.name}"></a></td>
-    <td th:text="${category.blogSet.toString()}"></td>
+    <td>
+      <th:block th:each="blogName : ${category.blogSet}">
+        <div th:if="${blogName.title == null}">
+          <span></span>
+        </div>
+        <div th:if="${blogName.title != null}">
+          <span th:text="${blogName.title}"></span>
+        </div>
+      </th:block>
+    </td>
+
     <td><a th:href="@{/category/edit?id=__${category.id}__}" class="btn btn-primary">Edit</a></td>
     <td>
       <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modelId"
@@ -67,6 +77,24 @@
       </form>
     </div>
   </div>
+</div>
+
+<div class="text-center">
+  <a class="page-item btn btn-dark"
+     th:if="${categoryList.hasPrevious()}"
+     th:href="@{/category(page = ${categoryList.number - 1})}">
+    <i class="ti-angle-left"></i>
+  </a>
+  <a class="page-item btn btn-dark number" th:classappend="${pageNumber == categoryList.number + 1} ? 'active' : ''"
+     th:each="pageNumber : ${pageNumberList}"
+     th:text="${pageNumber}"
+     th:href="@{/category(page = ${pageNumber - 1})}">
+  </a>
+  <a class="page-item btn btn-dark"
+     th:if="${categoryList.hasNext()}"
+     th:href="@{/category(page = ${categoryList.number + 1})}">
+    <i class="ti-angle-right"></i>
+  </a>
 </div>
 <script>
   function getBlogInfo (id, name) {
