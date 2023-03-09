@@ -3,7 +3,6 @@ package com.example.service;
 import com.example.dto.SongDTO;
 import com.example.model.Song;
 import com.example.repository.ISongRepository;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +11,6 @@ import java.util.List;
 
 @Service
 public class SongService implements ISongService {
-    @Autowired
-    private ModelMapper mapper;
     @Autowired
     private ISongRepository songRepository;
 

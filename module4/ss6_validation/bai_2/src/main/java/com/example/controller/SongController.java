@@ -54,7 +54,7 @@ public class SongController {
     }
 
     @PostMapping("/edit")
-    public String erformEdit(@Valid @ModelAttribute SongDTO songDTO,
+    public String performEdit(@Valid @ModelAttribute SongDTO songDTO,
                              BindingResult bindingResult,
                              RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
