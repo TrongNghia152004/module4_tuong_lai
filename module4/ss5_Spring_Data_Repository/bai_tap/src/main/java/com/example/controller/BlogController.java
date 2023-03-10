@@ -9,6 +9,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -42,7 +43,7 @@ public class BlogController {
         model.addAttribute("pageNumberList" , pageNumberList);
         return "/list";
     }
-
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/create")
     public String showCreateForm(Model model, String name, Pageable pageable) {
         if (name == null) {

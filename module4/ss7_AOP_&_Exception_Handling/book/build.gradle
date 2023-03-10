@@ -20,16 +20,12 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	runtimeOnly 'com.mysql:mysql-connector-j'
-	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	implementation group: 'org.springframework', name: 'spring-webmvc', version: '4.3.17.RELEASE'
-	implementation group: 'org.thymeleaf', name: 'thymeleaf-spring4', version: '3.0.9.RELEASE'
-	implementation group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '1.2'
-
-	implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
 	implementation group: 'org.hibernate', name: 'hibernate-validator', version: '6.0.10.Final'
+	implementation group: 'org.modelmapper', name: 'modelmapper', version: '3.1.1'
+	implementation group: 'org.springframework', name: 'spring-aspects', version: '5.3.20'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 }
-
 
 tasks.named('test') {
 	useJUnitPlatform()

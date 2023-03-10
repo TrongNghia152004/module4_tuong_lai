@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="7817c7cb-116b-4caa-b9e6-30a433ee6d28" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../ss8_session_&amp;_cookie/gio_hang/src/main/java/com/example/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss8_session_&amp;_cookie/gio_hang/src/main/java/com/example/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss8_session_&amp;_cookie/gio_hang/src/main/java/com/example/controller/ShoppingCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss8_session_&amp;_cookie/gio_hang/src/main/java/com/example/controller/ShoppingCartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss9_web_service/blog/src/main/java/com/example/configuration/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss9_web_service/blog/src/main/java/com/example/configuration/AppInit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss9_web_service/blog/src/main/java/com/example/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss9_web_service/blog/src/main/java/com/example/repository/ICustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss9_web_service/blog/src/main/java/com/example/service/ICustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss9_web_service/blog/src/main/java/com/example/service/IGeneralService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss9_web_service/blog/src/main/java/com/example/service/impl/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss5_Spring_Data_Repository/bai_tap/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../ss5_Spring_Data_Repository/bai_tap/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss5_Spring_Data_Repository/bai_tap/src/main/java/com/example/BlogApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss5_Spring_Data_Repository/bai_tap/src/main/java/com/example/BlogApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss5_Spring_Data_Repository/bai_tap/src/main/java/com/example/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss5_Spring_Data_Repository/bai_tap/src/main/java/com/example/controller/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss5_Spring_Data_Repository/bai_tap/src/main/java/com/example/service/IBlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss5_Spring_Data_Repository/bai_tap/src/main/java/com/example/service/IBlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ss7_AOP_&amp;_Exception_Handling.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_1/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_1/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_1/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_1/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_1/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_1/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_1/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_1/src/main/java/com/example/AppConfigs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_1/src/main/java/com/example/Bai1Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_1/src/main/java/com/example/ServletInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_1/src/main/java/com/example/controller/BookController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_1/src/main/java/com/example/model/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_1/src/main/java/com/example/repository/IBookRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_1/src/main/java/com/example/service/BookService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_1/src/main/java/com/example/service/IBookService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_1/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_1/src/test/java/com/example/bai_1/Bai1ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss8_session_&amp;_cookie/gio_hang/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../ss8_session_&amp;_cookie/gio_hang/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +57,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/module4/module4/ss6_validation/bai_1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -35,6 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1678410595680</updated>
       <workItem from="1678410596902" duration="20000" />
+      <workItem from="1678450255908" duration="592000" />
     </task>
     <servers />
   </component>
