@@ -1,4 +1,4 @@
-package com.example.bai_1.dto;
+package com.example.dto;
 
 import org.hibernate.validator.constraints.Length;
 

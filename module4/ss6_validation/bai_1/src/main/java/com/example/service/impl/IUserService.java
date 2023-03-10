@@ -1,6 +1,6 @@
-package com.example.bai_1.service;
+package com.example.service.impl;
 
-import com.example.bai_1.model.User;
+import com.example.model.User;
 
 import java.util.List;
 

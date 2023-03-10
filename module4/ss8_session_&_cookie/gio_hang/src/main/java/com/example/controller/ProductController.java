@@ -1,8 +1,8 @@
 package com.example.controller;
 
-import com.example.cart.model.Cart;
-import com.example.cart.model.Product;
-import com.example.cart.service.IProductService;
+import com.example.model.Cart;
+import com.example.model.Product;
+import com.example.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

@@ -1,4 +1,4 @@
-package com.example.bai_1.model;
+package com.example.model;
 
 import javax.persistence.*;
 

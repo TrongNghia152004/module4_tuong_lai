@@ -1,11 +1,12 @@
-package com.example.bai_1.service;
+package com.example.service;
 
-import com.example.bai_1.model.User;
-import com.example.bai_1.repository.IUserRepository;
+import com.example.model.User;
+import com.example.repository.IUserRepository;
+import com.example.service.impl.IUserService;
 
 import java.util.List;
 
-public class UserService implements IUserService{
+public class UserService implements IUserService {
 private IUserRepository iUserRepository;
     @Override
     public List<User> findAll() {

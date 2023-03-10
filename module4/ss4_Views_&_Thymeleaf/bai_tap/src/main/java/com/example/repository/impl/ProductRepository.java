@@ -14,14 +14,6 @@ import java.util.List;
 public class ProductRepository implements IProductRepository {
     public static List<Product> products;
 
-    static {
-        products = new ArrayList<Product>() {{
-            add(new Product(1, "Thuoc cam", 350000, "Tri benh cam", "TQ"));
-            add(new Product(2, "Thuoc sot", 12000000, "Tri benh sot", "US"));
-            add(new Product(3, "Thuoc ho", 550000, "Tri benh ho", "UK"));
-        }};
-    }
-
     @Override
     public List<Product> listProductByName(String name) {
         Session session = null;
