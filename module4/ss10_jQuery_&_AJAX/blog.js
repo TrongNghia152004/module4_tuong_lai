@@ -1,15 +1,16 @@
-function loadBlog(page, append) {
+function loadBlog(page,append){
+    let search= document.getElementById("idSearch").value;
     $.ajax({
         type: "GET",
-        url: `http://localhost:8080/blog?search`,
+        url: `http://localhost:8080/blog?page=${page ? page : "0"}&tittle=` + search,
         headers: {
             "Content-Type": "application/json",
         },
-        success: function (data) {
-            renderBlogs(data.content, append);
+        success: function(data){
+            renderBlogs(data.content,append);
             renderLoadMoreButton(data);
         },
-        error: function (error) {
+        error: function(error){
             console.log(error);
         },
     });

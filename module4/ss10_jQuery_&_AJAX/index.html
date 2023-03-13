@@ -17,8 +17,11 @@
 <body>
 
 <h1>Blog List</h1>
-<input name="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-<button class="btn btn-outline-success" type="submit">Search</button>
+<form action="" role="search" onsubmit="loadProducts();return false;">
+    <input type="text" id="idSearch" name="tittle" placeholder="Search name">
+    <button type="submit" >Search</button>
+</form>
+<div id="searchProduct"></div>
         <div id="blogList" class="container row mx-auto"></div>
 <div id="loadMoreContainer" class="d-flex justify-content-center">
 
