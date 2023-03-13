@@ -1,29 +1,14 @@
 package com.example.dto;
+
 import java.util.Objects;
 
-public class ProductDTO {
+public class ImgDTO {
     private Integer id;
+    private String imgURL;
     private String name;
     private double price;
-    private String imgURL;
 
-    public ProductDTO() {
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public ImgDTO() {
     }
 
     public double getPrice() {
@@ -34,6 +19,14 @@ public class ProductDTO {
         this.price = price;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getImgURL() {
         return imgURL;
     }
@@ -42,11 +35,19 @@ public class ProductDTO {
         this.imgURL = imgURL;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ProductDTO that = (ProductDTO) o;
+        ImgDTO that = (ImgDTO) o;
         return Objects.equals(id, that.id);
     }
 

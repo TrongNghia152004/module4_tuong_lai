@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/blog")
+@CrossOrigin("*")
 public class BlogController {
     @Autowired
     private IBlogService blogService;
