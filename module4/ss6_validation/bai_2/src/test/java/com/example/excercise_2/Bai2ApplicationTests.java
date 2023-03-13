@@ -1,13 +1,13 @@
-package com.example.bai_1;
+package com.example.excercise_2;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Bai1ApplicationTests {
+class Bai2ApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }
