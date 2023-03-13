@@ -1,23 +1,18 @@
-package com.example.model;
+package com.example.dto;
 
-import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import java.util.Objects;
 
-@Entity
-@Table(name = "product")
-public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ProductDTO {
     private Integer id;
-    @Column(name = "name", nullable = false)
+    @NotBlank
     private String name;
-    @Column(name = "price", nullable = false)
+    @NotBlank
     private double price;
-    @Column(name = "description", nullable = false)
-    private String description;
-    @Column(name = "img_url", columnDefinition = "text")
+    @NotBlank
     private String imgURL;
 
-    public Product() {
+    public ProductDTO() {
     }
 
     public Integer getId() {
@@ -44,19 +39,24 @@ public class Product {
         this.price = price;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getImgURL() {
         return imgURL;
     }
 
     public void setImgURL(String imgURL) {
         this.imgURL = imgURL;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ProductDTO that = (ProductDTO) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

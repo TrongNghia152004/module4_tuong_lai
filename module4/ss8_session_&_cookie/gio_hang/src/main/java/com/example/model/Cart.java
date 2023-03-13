@@ -1,81 +1,82 @@
 package com.example.model;
 
-import java.util.HashMap;
+import com.example.dto.ProductDTO;
+
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Cart {
+    private Map<ProductDTO, Integer> productMap = new LinkedHashMap<>();
 
-    private Map<Product,Integer> products = new HashMap<>();
-
-    public Cart(){
+    public Cart() {
     }
 
-    public Cart(Map<Product,Integer> products){
-        this.products = products;
+    public Map<ProductDTO, Integer> getProductMap() {
+        return productMap;
     }
 
-    public Map<Product,Integer> getProducts(){
-        return products;
+    public void setProductMap(Map<ProductDTO, Integer> productMap) {
+        this.productMap = productMap;
     }
 
-//    để kiểm tra xem sản phẩm đó đã có trong giỏ hàng hay chưa
-
-    private boolean checkItemInCart(Product product){
-        for (Map.Entry<Product,Integer> entry : products.entrySet()){
-            if (entry.getKey().getId().equals(product.getId())){
+    private boolean checkItemInCart(ProductDTO productDTO) {
+        for (Map.Entry<ProductDTO, Integer> entry : productMap.entrySet()) {
+            if (entry.getKey().getId().equals(productDTO.getId())) {
                 return true;
             }
         }
         return false;
     }
 
-
-
-    private Map.Entry<Product,Integer> selectItemInCart(Product product){
-        for (Map.Entry<Product,Integer> entry : products.entrySet()){
-            if (entry.getKey().getId().equals(product.getId())){
+    private Map.Entry<ProductDTO, Integer> selectItemInCart(ProductDTO productDTO) {
+        for (Map.Entry<ProductDTO, Integer> entry : productMap.entrySet()) {
+            if (entry.getKey().getId().equals(productDTO.getId())) {
                 return entry;
             }
         }
         return null;
     }
 
-//    sử dụng để thêm sản phẩm vào trong giỏ hàng.
-
-    public void addProduct(Product product){
-        if (!checkItemInCart(product)){
-            products.put(product,1);
-        }else {
-            Map.Entry<Product,Integer> itemEntry = selectItemInCart(product);
+    public void addProduct(ProductDTO productDTO) {
+        if (!checkItemInCart(productDTO)) {
+            productMap.put(productDTO, 1);
+        } else {
+            Map.Entry<ProductDTO, Integer> itemEntry = selectItemInCart(productDTO);
             Integer newQuantity = itemEntry.getValue() + 1;
-            products.replace(itemEntry.getKey(), newQuantity);
+            productMap.replace(itemEntry.getKey(), newQuantity);
         }
     }
 
+    public void removeProduct(ProductDTO productDTO) {
+        if (!checkItemInCart(productDTO)) {
+            productMap.put(productDTO, 1);
+        } else {
+            if (productMap.get(productDTO) == 0) {
+                productMap.remove(productDTO);
+            } else {
+                Map.Entry<ProductDTO, Integer> itemEntry = selectItemInCart(productDTO);
+                Integer newQuantity = itemEntry.getValue() - 1;
+                productMap.replace(itemEntry.getKey(), newQuantity);
+            }
+        }
+    }
 
-//    để đếm số lượng sản phẩm đó hiện có trong giỏ hàng
-
-    public Integer countProductQuantity(){
+    public Integer countProductQuantity() {
         Integer productQuantity = 0;
-        for (Map.Entry<Product,Integer> entry : products.entrySet()){
+        for (Map.Entry<ProductDTO, Integer> entry : productMap.entrySet()) {
             productQuantity += entry.getValue();
         }
         return productQuantity;
     }
 
-//    để đếm số lượng sản phẩm có trong giỏ hàng
-
-    public Integer countItemQuantity(){
-        return products.size();
+    public Integer countItemQuantity() {
+        return productMap.size();
     }
 
-
-//    để tính tổng số tiền cần phải thanh toán.
-
-    public  Float countTotalPayment(){
+    public Float countTotalPayment() {
         float payment = 0;
-        for (Map.Entry<Product, Integer> entry : products.entrySet()){
-            payment += entry.getKey().getPrice() * (float)entry.getValue();
+        for (Map.Entry<ProductDTO, Integer> entry : productMap.entrySet()) {
+            payment += entry.getKey().getPrice() * entry.getValue();
         }
         return payment;
     }
