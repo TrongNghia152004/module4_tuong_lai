@@ -30,7 +30,7 @@ public class BookService implements IBookService {
     @Override
     public BookDTO findById(int id) {
         BookDTO bookDTO = new BookDTO();
-        BeanUtils.copyProperties(Object.requireNonNull(bookRepository.findById(id).orElse(null)), bookDTO);
+        BeanUtils.copyProperties(Object.requireNoNull(bookRepository.findById(id).orElse(null)), bookDTO);
         return bookDTO;
     }
 
