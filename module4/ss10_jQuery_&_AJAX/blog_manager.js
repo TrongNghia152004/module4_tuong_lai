@@ -1,29 +1,25 @@
-function loadBlog(page,append){
-    let search= document.getElementById("idSearch").value;
+function loadBlog(page, append) {
+    let search = document.getElementById("idSearch").value;
     $.ajax({
         type: "GET",
         url: `http://localhost:8080/blog?page=${page ? page : "0"}&tittle=` + search,
         headers: {
             "Content-Type": "application/json",
         },
-        success: function(data){
-            renderBlogs(data.content,append);
+        success: function (data) {
+            renderBlogs(data.content, append);
             renderLoadMoreButton(data);
         },
-        error: function(error){
+        error: function (error) {
             console.log(error);
         },
     });
 }
 
-$(document).ready(function () {
-    loadBlog();
-})
-
 function renderBlogs(blogs, append) {
     let elements = "";
     for (let blog of blogs) {
-        elements += ` 
+        elements += `
         <div class="card col-sm-3">
         <div class="card-body">
         <h5 class="card-title text-center">${blog.authorName}</h5>
@@ -40,11 +36,13 @@ function renderBlogs(blogs, append) {
         $("#blogList").html(elements);
     }
 }
-function loadMore(nextPage){
-    loadBlog(nextPage,true);
+
+function loadMore(nextPage) {
+    loadBlog(nextPage, true);
 }
-function renderLoadMoreButton(blogPageData){
-    if (blogPageData.number < blogPageData.totalPages - 1){
+
+function renderLoadMoreButton(blogPageData) {
+    if (blogPageData.number < blogPageData.totalPages - 1) {
         $("#loadMoreContainer").html(
             `
             <button type="button" class="btn btn-secondary" onclick="loadMore(${blogPageData.number + 1})">
@@ -52,7 +50,7 @@ function renderLoadMoreButton(blogPageData){
 </button>
            `
         );
-    }else {
+    } else {
         $("#loadMoreContainer").remove();
     }
 }
